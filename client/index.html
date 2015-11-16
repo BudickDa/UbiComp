@@ -1,0 +1,35 @@
+<body>
+<div class="container">
+
+        {{>content}}
+
+</div>
+</body>
+
+<template name="content">
+    <div class="row">
+        <div style="border: 1px black solid;height: 30vh;background-color: {{color}}" class="col-md-12">
+
+        </div>
+    </div>
+    <div class="row">
+    <div class="col-md-4">
+        Temperature: {{temperature}}
+    </div>
+    <div class="col-md-4">
+        <button data-color="blue">Blue</button>
+    </div>
+    <div class="col-md-4">
+        <button data-color="yellow">Yellow</button>
+    </div>
+    <div class="col-md-4">
+        <button data-color="green">Green</button>
+    </div>
+    <div class="col-md-4">
+        <button data-color="black">Black</button>
+    </div>
+    <div class="col-md-4">
+        <button data-color="white">White</button>
+    </div>
+    </div>
+</template>
