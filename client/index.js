@@ -23,7 +23,12 @@ Template.content.events({
     'click button': function (event) {
         var color = event.currentTarget.dataset.color;
         if (color) {
-            Meteor.call(color);
+            if(!Meteor.status().connected) {
+                console.log('App is currently offline - your changes will be sent later.');
+                Data.update({type: 'color'}, {$set: {value: color}});
+            }else {
+                Meteor.call(color);
+            }
         }
     }
 });
